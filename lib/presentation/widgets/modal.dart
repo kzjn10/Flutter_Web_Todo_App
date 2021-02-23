@@ -58,8 +58,10 @@ class Modal<T> extends StatelessWidget {
               ? Text(
                   title,
                   key: titleKey,
-                  style: Theme.of(context).textTheme.headline6.copyWith(
-                      fontWeight: FontWeight.w500, color: Colors.black),
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline6
+                      .copyWith(fontWeight: FontWeight.w500),
                   textAlign: TextAlign.center,
                 )
               : null,

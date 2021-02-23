@@ -4,7 +4,6 @@ import 'package:viva/common/test/material_test_widget.dart';
 import 'package:viva/data/models/__mocks__/todo_model_mock.dart';
 import 'package:viva/presentation/journey/home/views/todo_widget.dart';
 import 'package:viva/presentation/journey/home/views/view_constants.dart';
-import 'package:viva/presentation/theme/theme_color.dart';
 
 void main() {
   group('Todo widget ', () {
@@ -69,7 +68,7 @@ void main() {
       final widgetFinder = tester.firstWidget(doneFinder);
 
       // Then
-      expect((widgetFinder as Icon).color, AppColor.primaryColor);
+      expect((widgetFinder as Icon).color, const Color(0xff2196f3));
     });
 
     testWidgets('Should render mark as not done widget correctly',
@@ -87,7 +86,7 @@ void main() {
       final widgetFinder = tester.firstWidget(doneFinder);
 
       // Then
-      expect((widgetFinder as Icon).color, AppColor.primaryColor);
+      expect((widgetFinder as Icon).color, const Color(0xff2196f3));
     });
 
     testWidgets('Should callback when tap delete button',

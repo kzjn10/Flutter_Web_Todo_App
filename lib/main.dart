@@ -27,7 +27,7 @@ Future<void> main() async {
   final delegate = await LocalizationDelegate.create(
       basePath: 'res/languages/',
       fallbackLocale: 'en',
-      supportedLocales: ['en']);
+      supportedLocales: ['en', 'vi']);
 
   runZoned(() {
     runApp(

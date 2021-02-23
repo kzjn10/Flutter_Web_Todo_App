@@ -1,3 +1,16 @@
 {
-  "appName": "Todo App"
+  "appName": "Todo App",
+  "common": {
+    "buttonCancel": "Cancel",
+    "buttonAddTodo": "Add",
+    "buttonDeleteTodo": "Delete",
+    "messageAddTodo": "Add Todo",
+    "messageDeleteTodo": "Delete Todo",
+    "messageConfirmDeleteTodo": "Are you sure?",
+    "messageActionSuccess": "Action success",
+    "messageDeleteSuccess": "Delete success",
+    "messageAddSuccess": "Add todo success",
+    "messageSomethingWentWrong": "Something went wrong",
+    "messageInputInvalidData": "Please input valid data"
+  }
 }

@@ -24,7 +24,8 @@ class TodoWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Container(
-      decoration: todoItemDecoration(backgroundColor: AppColor.white),
+      decoration:
+          todoItemDecoration(backgroundColor: AppColor.white.withOpacity(.5)),
       padding: const EdgeInsets.all(10.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -58,7 +59,7 @@ class TodoWidget extends StatelessWidget {
                 icon: Icon(
                   Icons.delete,
                   size: 20,
-                  color: AppColor.black54,
+                  color: theme.iconTheme.color,
                   key: TodoWidgetConstant.buttonDeleteIconKey,
                 ),
                 onPressed: () {
@@ -73,8 +74,9 @@ class TodoWidget extends StatelessWidget {
                 icon: Icon(
                   Icons.remove_circle_outlined,
                   size: 20,
-                  color:
-                      data.isNotDone ? AppColor.primaryColor : AppColor.black54,
+                  color: data.isNotDone
+                      ? theme.accentColor
+                      : theme.iconTheme.color,
                   key: TodoWidgetConstant.buttonMarkAsNotDoneIconKey,
                 ),
                 onPressed: () {
@@ -88,7 +90,8 @@ class TodoWidget extends StatelessWidget {
                 icon: Icon(
                   Icons.check_circle,
                   size: 20,
-                  color: data.isDone ? AppColor.primaryColor : AppColor.black54,
+                  color:
+                      data.isDone ? theme.accentColor : theme.iconTheme.color,
                   key: TodoWidgetConstant.buttonMarkAsDoneIconKey,
                 ),
                 onPressed: () {

@@ -1,16 +1,16 @@
 {
   "appName": "Todo App",
   "common": {
-    "buttonCancel": "Cancel",
-    "buttonAddTodo": "Add",
-    "buttonDeleteTodo": "Delete",
-    "messageAddTodo": "Add Todo",
-    "messageDeleteTodo": "Delete Todo",
-    "messageConfirmDeleteTodo": "Are you sure?",
-    "messageActionSuccess": "Action success",
-    "messageDeleteSuccess": "Delete success",
-    "messageAddSuccess": "Add todo success",
-    "messageSomethingWentWrong": "Something went wrong",
-    "messageInputInvalidData": "Please input valid data"
+    "buttonCancel": "Hủy",
+    "buttonAddTodo": "Thêm",
+    "buttonDeleteTodo": "Xóa",
+    "messageAddTodo": "Thêm Todo",
+    "messageDeleteTodo": "Xóa Todo",
+    "messageConfirmDeleteTodo": "Bạn có chắc xóa Todo?",
+    "messageActionSuccess": "Thao tác thành công",
+    "messageDeleteSuccess": "Xóa thành công",
+    "messageAddSuccess": "Đã thêm Todo ",
+    "messageSomethingWentWrong": "Đã có lỗi xảy ra",
+    "messageInputInvalidData": "Vui lòng nhập dữ liệu hợp lệ"
   }
 }

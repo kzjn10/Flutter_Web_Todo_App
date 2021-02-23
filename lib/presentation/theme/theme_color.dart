@@ -5,6 +5,9 @@ class AppColor {
   static const Color primaryColor = Color(0xFFfc8621);
   static const Color accentColor = Color(0xFFfecd1a);
 
+  static const Color secondPrimaryColor = Color(0xFF191D24);
+  static const Color secondAccentColor = Color(0xFFF04D4D);
+
   static const Color buttonSplashColor = Color(0xffe57872);
 
   static const Color white = Colors.white;

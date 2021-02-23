@@ -1,5 +1,8 @@
+import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_translate/flutter_translate.dart';
+import '../../../common/localization/keys.dart';
 
 import '../../../data/models/todo_model.dart';
 import '../../theme/theme_color.dart';
@@ -37,7 +40,16 @@ class _HomeScreenState extends BaseStateWidget<HomeScreen> {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         key: HomeScreenConstants.appbarKey,
-        title: const Text('Todo App'),
+        title: Text(translate(Keys.appname)),
+        actions: [
+          IconButton(
+              icon: Theme.of(context).brightness == Brightness.dark
+                  ? const Icon(Icons.brightness_2)
+                  : const Icon(Icons.brightness_2_outlined),
+              onPressed: () {
+                _changeBrightness();
+              })
+        ],
       ),
       body: Container(
         child: BlocConsumer(
@@ -125,7 +137,7 @@ class _HomeScreenState extends BaseStateWidget<HomeScreen> {
     return Modal(
       key: HomeScreenConstants.addTodoDialogKey,
       isFixedHorizontalActions: true,
-      title: 'Add Todo',
+      title: translate(Keys.common_messageaddtodo),
       description: '',
       context: context,
       body: Container(
@@ -151,7 +163,7 @@ class _HomeScreenState extends BaseStateWidget<HomeScreen> {
           key: HomeScreenConstants.cancelBtnDialogKey,
           onPressed: () => Navigator.of(context).pop(),
           child: Text(
-            'Cancel',
+            translate(Keys.common_buttoncancel),
             style: theme.textTheme.subtitle2
                 .copyWith(color: AppColor.deepCerulean),
           ),
@@ -170,7 +182,7 @@ class _HomeScreenState extends BaseStateWidget<HomeScreen> {
             );
           },
           child: Text(
-            'Add Todo',
+            translate(Keys.common_buttonaddtodo),
             style:
                 theme.textTheme.subtitle2.copyWith(color: theme.primaryColor),
           ),
@@ -184,17 +196,16 @@ class _HomeScreenState extends BaseStateWidget<HomeScreen> {
     return Modal(
       key: HomeScreenConstants.addTodoDialogKey,
       isFixedHorizontalActions: true,
-      title: 'Delete Todo',
-      description: 'Are you sure?',
+      title: translate(Keys.common_messagedeletetodo),
+      description: translate(Keys.common_messageconfirmdeletetodo),
       context: context,
       actions: [
         Expanded(child: Container()),
         TextButton(
           onPressed: () => Navigator.of(context).pop(),
           child: Text(
-            'Cancel',
-            style: theme.textTheme.subtitle2
-                .copyWith(color: AppColor.deepCerulean),
+            translate(Keys.common_buttoncancel),
+            style: theme.textTheme.subtitle2.copyWith(color: theme.accentColor),
           ),
         ),
         SizedBox(
@@ -207,7 +218,7 @@ class _HomeScreenState extends BaseStateWidget<HomeScreen> {
             _todoBloc.add(DeleteTodoEvent(todoData: data));
           },
           child: Text(
-            'Delete Todo',
+            translate(Keys.common_buttondeletetodo),
             style:
                 theme.textTheme.subtitle2.copyWith(color: theme.primaryColor),
           ),
@@ -224,5 +235,12 @@ class _HomeScreenState extends BaseStateWidget<HomeScreen> {
     } else {
       return 2;
     }
+  }
+
+  void _changeBrightness() {
+    DynamicTheme.of(context).setBrightness(
+        Theme.of(context).brightness == Brightness.dark
+            ? Brightness.light
+            : Brightness.dark);
   }
 }

@@ -1,4 +1,5 @@
 import 'package:bot_toast/bot_toast.dart';
+import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,47 +24,53 @@ class VivaApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final localizationDelegate = LocalizedApp.of(context).delegate;
 
-    return LocalizationProvider(
-      state: LocalizationProvider.of(context).state,
-      child: MultiBlocProvider(
-        providers: _getProviders(),
-        child: BlocBuilder<LanguageBloc, LanguageState>(
-          builder: (context, state) {
-            return ScreenUtilInit(
-              designSize: const Size(
-                AppConstants.screenWidth,
-                AppConstants.screenHeight,
-              ),
-              allowFontScaling: AppConstants.allowFontScaling,
-              builder: () => MaterialApp(
-                title: 'Note App',
-                theme: appTheme(context),
-                initialRoute: RouteName.initial,
-                debugShowCheckedModeBanner: false,
-                navigatorKey: _navigator,
-                localizationsDelegates: [
-                  GlobalMaterialLocalizations.delegate,
-                  GlobalWidgetsLocalizations.delegate,
-                  GlobalCupertinoLocalizations.delegate,
-                  DefaultCupertinoLocalizations.delegate,
-                  localizationDelegate,
-                ],
-                supportedLocales: localizationDelegate.supportedLocales,
-                locale: localizationDelegate.currentLocale,
-                onGenerateRoute: Routes.generateRoute,
-                builder: (context, child) {
-                  child = LoadingContainer(
-                    navigator: _navigator,
-                    child: child,
-                  );
+    return DynamicTheme(
+      defaultBrightness: Brightness.light,
+      data: (brightness) => buildAppTheme(context, brightness),
+      themedWidgetBuilder: (context, theme) {
+        return LocalizationProvider(
+          state: LocalizationProvider.of(context).state,
+          child: MultiBlocProvider(
+            providers: _getProviders(),
+            child: BlocBuilder<LanguageBloc, LanguageState>(
+              builder: (context, state) {
+                return ScreenUtilInit(
+                  designSize: const Size(
+                    AppConstants.screenWidth,
+                    AppConstants.screenHeight,
+                  ),
+                  allowFontScaling: AppConstants.allowFontScaling,
+                  builder: () => MaterialApp(
+                    title: 'Todo App',
+                    theme: theme,
+                    initialRoute: RouteName.initial,
+                    debugShowCheckedModeBanner: false,
+                    navigatorKey: _navigator,
+                    localizationsDelegates: [
+                      GlobalMaterialLocalizations.delegate,
+                      GlobalWidgetsLocalizations.delegate,
+                      GlobalCupertinoLocalizations.delegate,
+                      DefaultCupertinoLocalizations.delegate,
+                      localizationDelegate,
+                    ],
+                    supportedLocales: localizationDelegate.supportedLocales,
+                    locale: localizationDelegate.currentLocale,
+                    onGenerateRoute: Routes.generateRoute,
+                    builder: (context, child) {
+                      child = LoadingContainer(
+                        navigator: _navigator,
+                        child: child,
+                      );
 
-                  return _botToastBuilder(context, child);
-                },
-              ),
-            );
-          },
-        ),
-      ),
+                      return _botToastBuilder(context, child);
+                    },
+                  ),
+                );
+              },
+            ),
+          ),
+        );
+      },
     );
   }
 

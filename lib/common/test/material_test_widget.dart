@@ -1,5 +1,7 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_translate/flutter_translate.dart';
+import 'package:flutter_translate/localization_delegate.dart';
 
 import 'mock.dart';
 
@@ -23,6 +25,16 @@ Widget wrapWidget(Widget widget, NavigatorObserver observer) {
 Widget wrapWidgetWithoutNavigation(Widget widget) {
   return MaterialApp(
     home: widget,
+  );
+}
+
+Widget wrapWidgetWithLocalization(
+    Widget widget, LocalizationDelegate delegate) {
+  return LocalizedApp(
+    delegate,
+    MaterialApp(
+      home: widget,
+    ),
   );
 }
 

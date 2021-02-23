@@ -3,8 +3,10 @@ import 'dart:async';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_translate/global.dart';
 import 'package:uuid/uuid.dart';
 
+import '../../../../common/localization/keys.dart';
 import '../../../../data/models/todo_model.dart';
 import '../../../../utils/toast_utils.dart';
 import '../../../common_bloc/loader_bloc/loader_bloc.dart';
@@ -46,7 +48,8 @@ class TodoBloc extends Bloc<TodoEvent, TodoState> {
   Stream<TodoState> _mapAddTodoEventToState(AddTodoEvent event) async* {
     try {
       if (event.title.isEmpty || event.desc.isEmpty) {
-        ToastUtils.show(message: 'Please input valid data');
+        ToastUtils.show(
+            message: translate(Keys.common_messageinputinvaliddata));
       } else {
         final todoData = TodoModel(
           id: Uuid().v1(),
@@ -62,7 +65,7 @@ class TodoBloc extends Bloc<TodoEvent, TodoState> {
         final dataList = await homeInteractor.getAllTodo();
         yield AddTodoSuccessState(state: state, todoList: dataList);
         Timer(const Duration(milliseconds: 500), () {
-          ToastUtils.show(message: 'Add todo success');
+          ToastUtils.show(message: translate(Keys.common_messageaddsuccess));
         });
       }
     } catch (ex) {
@@ -91,7 +94,7 @@ class TodoBloc extends Bloc<TodoEvent, TodoState> {
       final dataList = await homeInteractor.getAllTodo();
       yield FetchingTodoListSuccessState(state: state, todoList: dataList);
       Timer(const Duration(milliseconds: 500), () {
-        ToastUtils.show(message: 'Delete todo success');
+        ToastUtils.show(message: translate(Keys.common_messagedeletesuccess));
       });
     } catch (ex) {
       yield* _handleException(ex);
@@ -109,7 +112,7 @@ class TodoBloc extends Bloc<TodoEvent, TodoState> {
       final dataList = await homeInteractor.getAllTodo();
       yield FetchingTodoListSuccessState(state: state, todoList: dataList);
       Timer(const Duration(milliseconds: 500), () {
-        ToastUtils.show(message: 'Action success');
+        ToastUtils.show(message: translate(Keys.common_messageactionsuccess));
       });
     } catch (ex) {
       yield* _handleException(ex);
@@ -119,7 +122,8 @@ class TodoBloc extends Bloc<TodoEvent, TodoState> {
   Stream<TodoState> _handleException(Exception e) async* {
     switch (e.runtimeType) {
       default:
-        ToastUtils.show(message: 'Something went wrong');
+        ToastUtils.show(
+            message: translate(Keys.common_messagesomethingwentwrong));
         break;
     }
   }

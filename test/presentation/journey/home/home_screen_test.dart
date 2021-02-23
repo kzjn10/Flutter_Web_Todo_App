@@ -1,8 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter_translate/localization_delegate.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:viva/common/test/material_test_widget.dart';
 import 'package:viva/data/models/__mocks__/todo_model_mock.dart';
 import 'package:viva/data/models/todo_model.dart';
 import 'package:viva/di/injection/injection.dart';
@@ -14,11 +17,17 @@ import 'package:viva/presentation/journey/home/views/todo_widget.dart';
 
 void main() {
   TodoBloc todoBlocMock;
+  LocalizationDelegate delegate;
 
   setUpAll(() async {
+    TestWidgetsFlutterBinding.ensureInitialized();
     SharedPreferences.setMockInitialValues({});
     await Injection.setUpLocator();
     todoBlocMock = TodoBlocMock();
+    delegate = await LocalizationDelegate.create(
+        basePath: 'res/languages/',
+        fallbackLocale: 'en',
+        supportedLocales: ['en', 'vi']);
   });
 
   tearDown(() {
@@ -37,9 +46,7 @@ void main() {
       child: HomeScreen(),
     );
 
-    await tester.pumpWidget(MaterialApp(
-      home: child,
-    ));
+    await tester.pumpWidget(wrapWidgetWithLocalization(child, delegate));
   }
 
   Future<void> _buildFetchEmptyTodoList(WidgetTester tester) async {
