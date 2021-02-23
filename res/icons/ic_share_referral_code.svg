@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.701961 0 0 0 0 0.156863 0 0 0 0 0.176471 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Account-V3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ACCO---Registered" transform="translate(-57.000000, -177.000000)">
+            <g id="Group" transform="translate(20.000000, 165.000000)" filter="url(#filter-1)">
+                <g transform="translate(37.000000, 12.000000)">
+                    <polygon id="Path" points="0 0 28 0 28 28 0 28"></polygon>
+                    <path d="M10.5,13.7742687 C13.0773288,13.7742687 15.1666667,11.6849309 15.1666667,9.10760206 C15.1666667,6.53027323 13.0773288,4.4409354 10.5,4.4409354 C7.92267117,4.4409354 5.83333333,6.53027323 5.83333333,9.10760206 C5.83333333,11.6849309 7.92267117,13.7742687 10.5,13.7742687 Z" id="Oval" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M3.54222733,24.1164018 L3.54222733,21.7830685 C3.54222733,19.2057397 5.63156516,17.1164018 8.20889399,17.1164018 L12.8755607,17.1164018 C15.4528895,17.1164018 17.5422273,19.2057397 17.5422273,21.7830685 L17.5422273,24.1164018" id="Path" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M18.6666667,4.59260206 C20.7315673,5.12130015 22.1758171,6.98192507 22.1758171,9.1134354 C22.1758171,11.2449457 20.7315673,13.1055706 18.6666667,13.6342687" id="Path" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M24.5422273,24.1164018 L24.5422273,21.7830685 C24.5300484,19.6650678 23.0930156,17.8208757 21.0422273,17.2914018" id="Path" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
