@@ -13,6 +13,12 @@
 /raw/master/screenshots/web_light.png" alt="Web Dark"/>
 </p>
 
+# Flutter version
+```
+[✓] Flutter (Channel beta, 1.26.0-17.6.pre)
+
+```
+
 # What will you learn
 - Clean architecture, micro frontend, MVVM
 - Hive DB
