@@ -1,7 +1,16 @@
 
 <p align="center">
   <img src="https://github.com/kzjn10/Flutter_Web_Todo_App
-/raw/master/screenshots/explore_cover_updated.gif" alt="Explore Cover"/>
+/raw/master/screenshots/phone_dark.png" alt="Phone Dark"/>
+
+<img src="https://github.com/kzjn10/Flutter_Web_Todo_App
+/raw/master/screenshots/phone_light.png" alt="Phone Light"/>
+
+<img src="https://github.com/kzjn10/Flutter_Web_Todo_App
+/raw/master/screenshots/web_dark.png" alt="Web Dark"/>
+
+<img src="https://github.com/kzjn10/Flutter_Web_Todo_App
+/raw/master/screenshots/web_light.png" alt="Web Dark"/>
 </p>
 
 # What will you learn
@@ -19,7 +28,6 @@
 ```
     flutter packages pub run build_runner build --delete-conflicting-outputs
     flutter packages pub run build_runner watch
-
 ```
 
 # How to run Unit test
@@ -30,6 +38,7 @@ sh run_test.sh
 
 # Can not build
 
+- Dynamic theme error
 ```
 https://stackoverflow.com/questions/65657716/error-the-method-ancestorstateoftype-isnt-defined-for-the-class-buildcontex?newreg=3517ec102d544c64b3f4f443c4b77d1a
 ```
