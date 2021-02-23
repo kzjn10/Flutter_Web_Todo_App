@@ -21,6 +21,8 @@
 - Bloc
 - Custom toast
 - Write unit test
+    - [ ] Home screen
+    - [ ] Local datasource
 - Simple responsive web layout
 - Localization
 - Dynamic theme
