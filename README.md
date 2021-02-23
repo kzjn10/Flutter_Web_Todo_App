@@ -1,16 +1,16 @@
 
 <p align="center">
   <img src="https://github.com/kzjn10/Flutter_Web_Todo_App
-/raw/master/screenshots/phone_dark.png" alt="Phone Dark"/>
+/blob/master/screenshots/phone_dark.png" alt="Phone Dark"/>
 
 <img src="https://github.com/kzjn10/Flutter_Web_Todo_App
-/raw/master/screenshots/phone_light.png" alt="Phone Light"/>
+/blob/master/screenshots/phone_light.png" alt="Phone Light"/>
 
 <img src="https://github.com/kzjn10/Flutter_Web_Todo_App
-/raw/master/screenshots/web_dark.png" alt="Web Dark"/>
+/blob/master/screenshots/web_dark.png" alt="Web Dark"/>
 
 <img src="https://github.com/kzjn10/Flutter_Web_Todo_App
-/raw/master/screenshots/web_light.png" alt="Web Dark"/>
+/blob/master/screenshots/web_light.png" alt="Web Dark"/>
 </p>
 
 # Flutter version
