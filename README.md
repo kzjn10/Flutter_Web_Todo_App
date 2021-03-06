@@ -39,7 +39,7 @@
 ```
 sh run_test.sh
 ```
-Install `lcove` if not
+Install `lcov` if not
 ```
 brew install lcov
 ```
