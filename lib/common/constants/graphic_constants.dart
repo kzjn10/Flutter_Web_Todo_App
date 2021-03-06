@@ -1,5 +1,3 @@
-class GraphicConstants {
-}
+class GraphicConstants {}
 
-class IconConstants {
-}
+class IconConstants {}

@@ -11,7 +11,7 @@
 
 # Flutter version
 ```
-[✓] Flutter (Channel beta, 1.26.0-17.6.pre)
+[✓] Flutter (Channel stable, 2.0.1, on macOS 11.2.1 20D74 darwin-x64, locale en)
 
 ```
 
@@ -22,7 +22,7 @@
 - Custom toast
 - Write unit test
     - [ ] Home screen
-    - [ ] Local datasource
+    - [x] Local datasource
 - Simple responsive web layout
 - Localization
 - Dynamic theme
@@ -39,6 +39,12 @@
 ```
 sh run_test.sh
 ```
+Install `lcove` if not
+```
+brew install lcov
+```
+
+
 
 # Can not build
 

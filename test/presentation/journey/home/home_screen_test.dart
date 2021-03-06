@@ -308,7 +308,8 @@ void main() {
     //   await tester.pump();
     //
     //   // Then
-    //   expect(find.byKey(HomeScreenConstants.addTodoDialogKey), findsOneWidget);
+    //   expect(find.byKey(HomeScreenConstants.addTodoDialogKey),
+    //   findsOneWidget);
     // });
 
     testWidgets('Should render correct item on grid',
