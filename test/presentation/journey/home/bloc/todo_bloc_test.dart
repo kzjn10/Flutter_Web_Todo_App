@@ -1,5 +1,6 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:get_it/get_it.dart';
 import 'package:hive/hive.dart';
 import 'package:viva/data/datasource/local/databases/local_datasource/todo_local_datasource.dart';
 import 'package:viva/data/models/__mocks__/todo_model_mock.dart';
@@ -17,6 +18,8 @@ void main() {
     Box box;
 
     setUpAll(() async {
+      final getIt = GetIt.instance;
+      await getIt.reset();
       todoLocalDataSource = TodoLocalDataSource();
       await todoLocalDataSource.deleteAll();
       box = await todoLocalDataSource.boxInstance;
@@ -46,7 +49,7 @@ void main() {
         homeInteractor: HomeInteractorImpl(
           homeRepository: HomeRepositoryImpl(
             todoRepository:
-                TodoRepositoryImpl(todoLocalDataSource: TodoLocalDataSource()),
+                TodoRepositoryImpl(todoLocalDataSource: todoLocalDataSource),
           ),
         ),
       ),
@@ -68,7 +71,7 @@ void main() {
         homeInteractor: HomeInteractorImpl(
           homeRepository: HomeRepositoryImpl(
             todoRepository:
-                TodoRepositoryImpl(todoLocalDataSource: TodoLocalDataSource()),
+                TodoRepositoryImpl(todoLocalDataSource: todoLocalDataSource),
           ),
         ),
       ),
@@ -88,7 +91,7 @@ void main() {
         homeInteractor: HomeInteractorImpl(
           homeRepository: HomeRepositoryImpl(
             todoRepository: TodoRepositoryImpl(
-              todoLocalDataSource: TodoLocalDataSource(),
+              todoLocalDataSource: todoLocalDataSource,
             ),
           ),
         ),
@@ -110,7 +113,7 @@ void main() {
         homeInteractor: HomeInteractorImpl(
           homeRepository: HomeRepositoryImpl(
             todoRepository: TodoRepositoryImpl(
-              todoLocalDataSource: TodoLocalDataSource(),
+              todoLocalDataSource: todoLocalDataSource,
             ),
           ),
         ),
@@ -131,7 +134,7 @@ void main() {
         homeInteractor: HomeInteractorImpl(
           homeRepository: HomeRepositoryImpl(
             todoRepository: TodoRepositoryImpl(
-              todoLocalDataSource: TodoLocalDataSource(),
+              todoLocalDataSource: todoLocalDataSource,
             ),
           ),
         ),
